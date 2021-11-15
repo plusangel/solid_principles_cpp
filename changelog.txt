@@ -1,0 +1,7 @@
+## Changelog for SOLID principles examples
+
+### 0.0.2 15/11/2021
+Added S of SOLID implementation (Single responsibility)
+
+### 0.0.1 10/11/2021
+Initial commit

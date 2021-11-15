@@ -1,5 +1,6 @@
 [requires]
 spdlog/1.9.2
+stduuid/1.0
 
 [generators]
 cmake

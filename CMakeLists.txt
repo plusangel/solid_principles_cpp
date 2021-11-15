@@ -14,7 +14,13 @@ include_directories(
         include
 )
 
-add_library(order include/order.h order.cpp)
+add_library(order include/order.h src/order.cpp)
+add_library(new_order include/new_order.h src/new_order.cpp)
+add_library(payment_processor include/payment_procesor.h src/payment_processor.cpp)
 
-add_executable(solid_principles main.cpp)
-target_link_libraries(solid_principles order ${CONAN_LIBS})
+add_executable(main_plain main_plain.cpp)
+target_link_libraries(main_plain order ${CONAN_LIBS})
+
+add_executable(main_single_responsibility main_single_responsibility.cpp)
+target_link_libraries(main_single_responsibility new_order payment_processor ${CONAN_LIBS})
+

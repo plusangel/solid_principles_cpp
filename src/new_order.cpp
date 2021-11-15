@@ -12,7 +12,7 @@ void NewOrder::PrintOrder() const {
   for (auto& item : items_) {
     spdlog::info(item.item_);
   }
-  spdlog::info("and the status is {0}", status_);
+  spdlog::info("and the status is {0}", StatusToString(status_));
 }
 
 float NewOrder::TotalPrice() const {
@@ -23,8 +23,8 @@ float NewOrder::TotalPrice() const {
   return total;
 }
 
-void NewOrder::SetStatus(std::string_view status) {
-  status_ = status.data();
+void NewOrder::SetStatus(Status status) {
+  status_ = status;
 }
 
 const uuids::uuid &NewOrder::GetId() const {

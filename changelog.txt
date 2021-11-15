@@ -1,5 +1,8 @@
 ## Changelog for SOLID principles examples
 
+### 0.0.3 15/11/2021
+Added enum to handle order's status
+
 ### 0.0.2 15/11/2021
 Added S of SOLID implementation (Single responsibility)
 

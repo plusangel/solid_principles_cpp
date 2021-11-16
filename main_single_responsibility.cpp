@@ -1,7 +1,7 @@
-#include "spdlog/spdlog.h"
 #include "item.h"
 #include "new_order.h"
-#include "payment_procesor.h"
+#include "payment_processor.h"
+#include "spdlog/spdlog.h"
 
 int main() {
   Item item1{"Keyboard", 1, 50.0};

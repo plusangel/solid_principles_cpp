@@ -2,7 +2,7 @@
 // Created by bender on 15/11/2021.
 //
 
-#include "payment_procesor.h"
+#include "payment_processor.h"
 
 void PaymentProcessor::PayDebit() const {
   spdlog::info("Processing debit payment type");

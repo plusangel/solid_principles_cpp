@@ -15,9 +15,9 @@ int main() {
 
   an_order.PrintOrder();
 
-  PaymentProcessor payment_processor{an_order, "65379"};
+  PaymentProcessor payment_processor{an_order};
   payment_processor.DisplayInfo();
-  payment_processor.PayCredit();
+  payment_processor.PayCredit("65379");
 
   return 0;
 }

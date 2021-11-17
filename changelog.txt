@@ -1,5 +1,8 @@
 ## Changelog for SOLID principles examples
 
+### 0.0.5 17/11/2021
+Necessary refactoring to support the Liskov substitution principle
+
 ### 0.0.4 16/11/2021
 Added O of SOLID principles (Open closed)
 

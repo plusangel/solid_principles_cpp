@@ -9,18 +9,16 @@
 #include "new_order.h"
 
 struct PaymentProcessor {
-  PaymentProcessor(const NewOrder& new_order, std::string_view security_code) :
-      new_order_{std::make_shared<NewOrder>(new_order)},
-      security_code_{security_code} {}
+  explicit PaymentProcessor(const NewOrder &new_order)
+      : new_order_{std::make_shared<NewOrder>(new_order)}{}
 
   void DisplayInfo() const;
-  void PayDebit() const;
-  void PayCredit() const;
-  void PayPaypal() const;
+  void PayDebit(std::string_view security_code) const;
+  void PayCredit(std::string_view security_code) const;
+  void PayPaypal(std::string_view security_code) const;
 
  private:
   std::shared_ptr<NewOrder> new_order_;
-  std::string_view security_code_;
 };
 
 #endif//SOLID_PRINCIPLES__PAYMENT_PROCESSOR_H_

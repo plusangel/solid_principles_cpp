@@ -4,24 +4,24 @@
 
 #include "payment_processor.h"
 
-void PaymentProcessor::PayDebit() const {
+void PaymentProcessor::PayDebit(std::string_view security_code) const {
   spdlog::info("Processing debit payment type");
-  spdlog::info("Verifying security code: {0}", security_code_);
+  spdlog::info("Verifying security code: {0}", security_code);
   new_order_->SetStatus(Status::Paid);
 }
 
-void PaymentProcessor::PayCredit() const {
+void PaymentProcessor::PayCredit(std::string_view security_code) const {
   spdlog::info("Processing credit payment type");
-  spdlog::info("Verifying security code: {0}", security_code_);
+  spdlog::info("Verifying security code: {0}", security_code);
   new_order_->SetStatus(Status::Paid);
 }
 
-void PaymentProcessor::PayPaypal() const {
+void PaymentProcessor::PayPaypal(std::string_view security_code) const {
   spdlog::info("Processing paypal payment type");
-  spdlog::info("Verifying security code: {0}", security_code_);
+  spdlog::info("Verifying security code: {0}", security_code);
   new_order_->SetStatus(Status::Paid);
 }
 
 void PaymentProcessor::DisplayInfo() const {
-  spdlog::info("Payment processor for order {0} with security code {1}", to_string(new_order_->GetId()), security_code_);
+  spdlog::info("Payment processor for order {0}", to_string(new_order_->GetId()));
 }

@@ -27,3 +27,6 @@ target_link_libraries(main_single_responsibility new_order payment_processor ${C
 add_executable(main_open_closed main_open_closed.cpp)
 target_link_libraries(main_open_closed new_order ${CONAN_LIBS})
 
+add_executable(main_liskov main_liskov.cpp)
+target_link_libraries(main_liskov new_order ${CONAN_LIBS})
+

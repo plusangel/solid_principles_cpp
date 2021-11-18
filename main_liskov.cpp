@@ -1,8 +1,9 @@
 #include "item.h"
 #include "new_order.h"
-#include "payment_processor_debit_liskov.h"
 #include "payment_processor_credit_liskov.h"
+#include "payment_processor_debit_liskov.h"
 #include "payment_processor_paypal_liskov.h"
+#include "spdlog/spdlog.h"
 
 int main() {
   Item item1{"Keyboard", 1, 50.0};
@@ -17,16 +18,30 @@ int main() {
   an_order.PrintOrder();
 
   PaymentProcessorDebitLiskov processor1{an_order, "65379"};
-  processor1.DisplayInfo();
-  processor1.Pay();
+  try {
+    processor1.DisplayInfo();
+    processor1.Pay();
+  } catch (const std::exception &e) {
+    spdlog::error(e.what());
+  }
 
   PaymentProcessorCreditLiskov processor2{an_order, "65379"};
   processor2.DisplayInfo();
-  processor2.Pay();
+  try {
+    processor2.AuthSMS("894376");
+    processor2.Pay();
+  } catch (const std::exception &e) {
+    spdlog::error(e.what());
+  }
 
   PaymentProcessorPaypalLiskov processor3{an_order, "angelos@in.gr"};
   processor3.DisplayInfo();
-  processor3.Pay();
+  try {
+    processor3.AuthSMS("764423");
+    processor3.Pay();
+  } catch (const std::exception &e) {
+    spdlog::error(e.what());
+  }
 
   return 0;
 }

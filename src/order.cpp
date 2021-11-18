@@ -32,6 +32,6 @@ void Order::Pay(std::string_view payment_type, std::string_view security_code) {
     spdlog::info("Verifying security code: {}", security_code);
     status_ = "paid";
   } else {
-    throw Trouble(std::string("Unknown payment type ") + payment_type.data());
+    throw Trouble("Unknown payment type ");
   }
 }

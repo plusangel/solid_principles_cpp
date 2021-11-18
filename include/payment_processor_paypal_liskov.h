@@ -12,6 +12,11 @@ struct PaymentProcessorPaypalLiskov final : public PaymentProcessorAbstractLisko
       : new_order_{std::make_shared<NewOrder>(new_order)}
       , email_address_{email_address} {}
 
+  void AuthSMS(std::string_view sms_code) override {
+    spdlog::info("Verifying SMS code {0}", sms_code);
+    verified_ = true;
+  }
+
   void Pay() const override {
     spdlog::info("Processing paypal payment type");
     spdlog::info("Verifying security code: {0}", email_address_);
@@ -25,6 +30,7 @@ struct PaymentProcessorPaypalLiskov final : public PaymentProcessorAbstractLisko
  private:
   std::shared_ptr<NewOrder> new_order_;
   std::string_view email_address_;
+  bool verified_{false};
 };
 
 #endif//SOLID_PRINCIPLES_INCLUDE_PAYMENT_PROCESSOR_PAYPAL_LISKOV_H_

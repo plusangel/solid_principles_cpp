@@ -6,13 +6,22 @@
 #define SOLID_PRINCIPLES_INCLUDE_PAYMENT_PROCESSOR_DEBIT_LISKOV_H_
 #include "payment_processor_abstract_liskov.h"
 #include "spdlog/spdlog.h"
+#include "trouble.h"
 
 struct PaymentProcessorDebitLiskov final : public PaymentProcessorAbstractLiskov {
   explicit PaymentProcessorDebitLiskov(const NewOrder &new_order, std::string_view security_code)
       : new_order_{std::make_shared<NewOrder>(new_order)}
       , security_code_{security_code} {}
 
+  void AuthSMS(std::string_view sms_code) override {
+    spdlog::info("Verifying SMS code {0}", sms_code);
+    verified_ = true;
+  }
+
   void Pay() const override {
+    if (!verified_) {
+      throw Trouble{"Not authorised"};
+    }
     spdlog::info("Processing debit payment type");
     spdlog::info("Verifying security code: {0}", security_code_);
     new_order_->SetStatus(Status::Paid);
@@ -25,6 +34,7 @@ struct PaymentProcessorDebitLiskov final : public PaymentProcessorAbstractLiskov
  private:
   std::shared_ptr<NewOrder> new_order_;
   std::string_view security_code_;
+  bool verified_{false};
 };
 
 #endif//SOLID_PRINCIPLES_INCLUDE_PAYMENT_PROCESSOR_DEBIT_LISKOV_H_

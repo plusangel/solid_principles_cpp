@@ -1,5 +1,8 @@
 ## Changelog for SOLID principles examples
 
+### 0.0.7 18/11/2021
+Added the AuthSMS to get prepared for the next principle
+
 ### 0.0.6 17/11/2021
 Added L of SOLID principles (Liskov)
 

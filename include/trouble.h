@@ -4,12 +4,13 @@
 
 #ifndef SOLID_PRINCIPLES_INCLUDE_TROUBLE_H_
 #define SOLID_PRINCIPLES_INCLUDE_TROUBLE_H_
-class Trouble {
+
+class Trouble : public std::exception {
  public:
-  explicit Trouble(std::string_view message = "There's a problem") : m_message {message}{}
-  [[nodiscard]] std::string_view what() const { return m_message; }
+  explicit Trouble(const char * message = "There's a problem") : m_message {message}{}
+  [[nodiscard]] const char * what() const noexcept override { return m_message; }
  private:
-  std::string m_message;
+  const char *m_message;
 };
 
 #endif//SOLID_PRINCIPLES_INCLUDE_TROUBLE_H_

@@ -1,8 +1,8 @@
 #include "item.h"
 #include "new_order.h"
-#include "payment_processor_credit_liskov.h"
-#include "payment_processor_debit_liskov.h"
-#include "payment_processor_paypal_liskov.h"
+#include "payment_processor_credit_is_inh.h"
+#include "payment_processor_debit_is_inh.h"
+#include "payment_processor_paypal_is_inh.h"
 #include "spdlog/spdlog.h"
 
 int main() {
@@ -17,7 +17,7 @@ int main() {
 
   an_order.PrintOrder();
 
-  PaymentProcessorDebitLiskov processor1{an_order, "65379"};
+  PaymentProcessorDebitISInh processor1{an_order, "65379"};
   try {
     processor1.DisplayInfo();
     processor1.AuthSMS("264423");
@@ -26,16 +26,15 @@ int main() {
     spdlog::error(e.what());
   }
 
-  PaymentProcessorCreditLiskov processor2{an_order, "65379"};
+  PaymentProcessorCreditISInh processor2{an_order, "65379"};
   try {
     processor2.DisplayInfo();
-    processor2.AuthSMS("894376");
     processor2.Pay();
   } catch (const std::exception &e) {
     spdlog::error(e.what());
   }
 
-  PaymentProcessorPaypalLiskov processor3{an_order, "angelos@in.gr"};
+  PaymentProcessorPaypalISInh processor3{an_order, "angelos@in.gr"};
   try {
     processor3.DisplayInfo();
     processor3.AuthSMS("764423");

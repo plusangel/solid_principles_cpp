@@ -1,5 +1,8 @@
 ## Changelog for SOLID principles examples
 
+### 0.0.8 20/11/2021
+Added I of SOLID principles (Integration Segregation) using Inheritance
+
 ### 0.0.7 18/11/2021
 Added the AuthSMS to get prepared for the next principle
 

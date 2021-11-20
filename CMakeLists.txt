@@ -32,3 +32,6 @@ target_link_libraries(main_liskov new_order ${CONAN_LIBS})
 
 add_executable(main_is_inh main_is_inh.cpp)
 target_link_libraries(main_is_inh new_order ${CONAN_LIBS})
+
+add_executable(main_is_comp main_is_comp.cpp)
+target_link_libraries(main_is_comp new_order ${CONAN_LIBS})

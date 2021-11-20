@@ -4,22 +4,20 @@
 
 #ifndef SOLID_PRINCIPLES_INCLUDE_PAYMENT_PROCESSOR_PAYPAL_IS_INH_H_
 #define SOLID_PRINCIPLES_INCLUDE_PAYMENT_PROCESSOR_PAYPAL_IS_INH_H_
-#include "payment_processor_abstract_sms_is_inh.h"
+#include <memory>
+#include "payment_processor_abstract_is.h"
+#include "sms_authorizer.h"
 #include "spdlog/spdlog.h"
 #include "trouble.h"
 
-struct PaymentProcessorPaypalISInh final : public PaymentProcessorAbstractSMS {
-  explicit PaymentProcessorPaypalISInh(const NewOrder &new_order, std::string_view email_address)
+struct PaymentProcessorPaypalISComp final : public PaymentProcessorAbstractIS {
+  explicit PaymentProcessorPaypalISComp(const NewOrder &new_order, std::string_view email_address, std::shared_ptr<SMSAuthorizer> sms_authorizer)
       : new_order_{std::make_shared<NewOrder>(new_order)}
-      , email_address_{email_address} {}
-
-  void AuthSMS(std::string_view sms_code) override {
-    spdlog::info("Verifying SMS code {0}", sms_code);
-    verified_ = true;
-  }
+      , email_address_{email_address}
+      , sms_authorizer_{std::move(sms_authorizer)} {}
 
   void Pay() const override {
-    if (!verified_) {
+    if (!sms_authorizer_->IsAuthorized()) {
       throw Trouble{"Not authorised"};
     }
     spdlog::info("Processing paypal payment type");
@@ -34,7 +32,7 @@ struct PaymentProcessorPaypalISInh final : public PaymentProcessorAbstractSMS {
  private:
   std::shared_ptr<NewOrder> new_order_;
   std::string_view email_address_;
-  bool verified_{false};
+  std::shared_ptr<SMSAuthorizer> sms_authorizer_;
 };
 
 #endif//SOLID_PRINCIPLES_INCLUDE_PAYMENT_PROCESSOR_PAYPAL_IS_INH_H_

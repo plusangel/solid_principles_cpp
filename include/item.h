@@ -4,10 +4,13 @@
 
 #ifndef SOLID_PRINCIPLES__ITEM_H_
 #define SOLID_PRINCIPLES__ITEM_H_
-#include  <string_view>
+#include <string_view>
 
 struct Item {
-  Item(std::string_view item, int quantity, float price) : item_{item}, quantity_{quantity}, price_{price} {}
+  Item(std::string_view item, int quantity, float price)
+      : item_{item}
+      , quantity_{quantity}
+      , price_{price} {}
 
   std::string_view item_;
   int quantity_;

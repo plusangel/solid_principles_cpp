@@ -1,8 +1,8 @@
 #include "item.h"
 #include "new_order.h"
-#include "payment_processor_debit.h"
-#include "payment_processor_credit.h"
-#include "payment_processor_paypal.h"
+#include "payment_processor_credit_oc.h"
+#include "payment_processor_debit_oc.h"
+#include "payment_processor_paypal_oc.h"
 
 int main() {
   Item item1{"Keyboard", 1, 50.0};
@@ -16,15 +16,15 @@ int main() {
 
   an_order.PrintOrder();
 
-  PaymentProcessorDebit processor1{an_order};
+  PaymentProcessorDebitOC processor1{an_order};
   processor1.DisplayInfo();
   processor1.Pay("65379");
 
-  PaymentProcessorCredit processor2{an_order};
+  PaymentProcessorCreditOC processor2{an_order};
   processor2.DisplayInfo();
   processor2.Pay("65379");
 
-  PaymentProcessorPaypal processor3{an_order};
+  PaymentProcessorPaypalOC processor3{an_order};
   processor3.DisplayInfo();
   processor3.Pay("65379");
 

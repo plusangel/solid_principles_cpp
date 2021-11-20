@@ -23,8 +23,23 @@ Payment processor: [payment_processor.h](./include/payment_processor.h) & [payme
 
 Example of use: [main_single_responsibility.cpp](examples/main_single_responsibility.cpp)
 
+### Open closed principle
+
+Item class: [item.h](./include/item.h) \
+New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp) 
+
+Parent class: [payment_processor_abstract_op.h](./include/payment_processor_abstract_oc.h)
+
+Child class 1: [payment_processor_credit_oc.h](./include/payment_processor_credit_oc.h) \
+Child class 2: [payment_processor_debit_oc.h](./include/payment_processor_debit_oc.h) \
+Child class 3: [payment_processor_paypal_oc.h](./include/payment_processor_paypal_oc.h)
+
+Example: [main_open_closed.cpp](examples/main_open_closed.cpp)
 
 ### Integration Segregation Principle (Inheritance)
+
+Item class: [item.h](./include/item.h) \
+New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp) 
 
 Parent class 1: [payment_processor_abstract_is.h](./include/payment_processor_abstract_is.h) \
 Parent class 2: [payment_processor_abstract_sms_is.h](./include/payment_processor_abstract_sms_is_inh.h)
@@ -36,6 +51,9 @@ Child class 3: [payment_processor_paypal_is_inh.h](./include/payment_processor_p
 Example: [main_is_inh.cpp](examples/main_is_inh.cpp)
 
 ### Integration Segregation Principle (Composition)
+
+Item class: [item.h](./include/item.h) \
+New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp) 
 
 Parent class: [payment_processor_abstract_is.h](./include/payment_processor_abstract_is.h) \
 SMS_authorizer class: [sms_authorizer.h](./include/sms_authorizer.h)

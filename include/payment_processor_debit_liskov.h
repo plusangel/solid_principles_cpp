@@ -9,8 +9,8 @@
 #include "trouble.h"
 
 struct PaymentProcessorDebitLiskov final : public PaymentProcessorAbstractLiskov {
-  explicit PaymentProcessorDebitLiskov(const NewOrder &new_order, std::string_view security_code)
-      : new_order_{std::make_shared<NewOrder>(new_order)}
+  explicit PaymentProcessorDebitLiskov(NewOrder &new_order, std::string_view security_code)
+      : new_order_{new_order}
       , security_code_{security_code} {}
 
   void AuthSMS(std::string_view sms_code) override {
@@ -24,15 +24,15 @@ struct PaymentProcessorDebitLiskov final : public PaymentProcessorAbstractLiskov
     }
     spdlog::info("Processing debit payment type");
     spdlog::info("Verifying security code: {0}", security_code_);
-    new_order_->SetStatus(Status::Paid);
+    new_order_.SetStatus(Status::Paid);
   }
 
   void DisplayInfo() const override {
-    spdlog::info("Debit payment processor for order {0}", to_string(new_order_->GetId()));
+    spdlog::info("Debit payment processor for order {0}", to_string(new_order_.GetId()));
   }
 
  private:
-  std::shared_ptr<NewOrder> new_order_;
+  NewOrder &new_order_;
   std::string_view security_code_;
   bool verified_{false};
 };

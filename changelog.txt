@@ -1,5 +1,8 @@
 ## Changelog for SOLID principles examples
 
+### 0.0.13 20/11/2021
+Liskov principle refactoring and readme update
+
 ### 0.0.12 20/11/2021
 Open closed principle refactoring and readme update
 

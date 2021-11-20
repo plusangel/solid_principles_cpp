@@ -8,8 +8,8 @@
 #include "spdlog/spdlog.h"
 
 struct PaymentProcessorPaypalLiskov final : public PaymentProcessorAbstractLiskov {
-  explicit PaymentProcessorPaypalLiskov(const NewOrder &new_order, std::string_view email_address)
-      : new_order_{std::make_shared<NewOrder>(new_order)}
+  explicit PaymentProcessorPaypalLiskov(NewOrder &new_order, std::string_view email_address)
+      : new_order_{new_order}
       , email_address_{email_address} {}
 
   void AuthSMS(std::string_view sms_code) override {
@@ -20,15 +20,15 @@ struct PaymentProcessorPaypalLiskov final : public PaymentProcessorAbstractLisko
   void Pay() const override {
     spdlog::info("Processing paypal payment type");
     spdlog::info("Verifying security code: {0}", email_address_);
-    new_order_->SetStatus(Status::Paid);
+    new_order_.SetStatus(Status::Paid);
   }
 
   void DisplayInfo() const override {
-    spdlog::info("Paypal payment processor for order {0}", to_string(new_order_->GetId()));
+    spdlog::info("Paypal payment processor for order {0}", to_string(new_order_.GetId()));
   }
 
  private:
-  std::shared_ptr<NewOrder> new_order_;
+  NewOrder &new_order_;
   std::string_view email_address_;
   bool verified_{false};
 };

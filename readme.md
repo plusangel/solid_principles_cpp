@@ -36,6 +36,19 @@ Child class 3: [payment_processor_paypal_oc.h](./include/payment_processor_paypa
 
 Example: [main_open_closed.cpp](examples/main_open_closed.cpp)
 
+### Liskov principle
+
+Item class: [item.h](./include/item.h) \
+New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp)
+
+Parent class: [payment_processor_liskov.h](./include/payment_processor_abstract_liskov.h)
+
+Child class 1: [payment_processor_credit_liskov.h](./include/payment_processor_credit_liskov.h) \
+Child class 2: [payment_processor_debit_liskov.h](./include/payment_processor_debit_liskov.h) \
+Child class 3: [payment_processor_paypal_liskov.h](./include/payment_processor_paypal_liskov.h)
+
+Example: [main_liskov.cpp](examples/main_liskov.cpp)
+
 ### Integration Segregation Principle (Inheritance)
 
 Item class: [item.h](./include/item.h) \

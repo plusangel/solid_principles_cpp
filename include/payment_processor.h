@@ -5,7 +5,6 @@
 #ifndef SOLID_PRINCIPLES__PAYMENT_PROCESSOR_H_
 #define SOLID_PRINCIPLES__PAYMENT_PROCESSOR_H_
 #include "new_order.h"
-#include <memory>
 #include <string_view>
 
 struct PaymentProcessor {

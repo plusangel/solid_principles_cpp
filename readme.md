@@ -15,6 +15,15 @@ Example of use: [main_plain.cpp](examples/main_plain.cpp)
 
 ## Principles
 
+### Single Responsibility
+
+Item class: [item.h](./include/item.h) \
+New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp) \
+Payment processor: [payment_processor.h](./include/payment_processor.h) & [payment_processor.cpp](./src/payment_processor.cpp)
+
+Example of use: [main_single_responsibility.cpp](examples/main_single_responsibility.cpp)
+
+
 ### Integration Segregation Principle (Inheritance)
 
 Parent class 1: [payment_processor_abstract_is.h](./include/payment_processor_abstract_is.h) \

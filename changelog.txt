@@ -1,5 +1,8 @@
 ## Changelog for SOLID principles examples
 
+### 0.0.11 20/11/2021
+Single responsibility refactoring and readme update
+
 ### 0.0.10 20/11/2021
 Housekeeping
 

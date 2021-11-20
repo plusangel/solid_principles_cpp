@@ -11,7 +11,7 @@ TBD
 Item class: [item.h](./include/item.h) \
 Order class: [order.h](./include/order.h) & [order.cpp](./src/order.cpp)
 
-Example of use: [main_plain.cpp](./main_plain.cpp)
+Example of use: [main_plain.cpp](examples/main_plain.cpp)
 
 ## Principles
 
@@ -24,7 +24,7 @@ Child class 1: [payment_processor_credit_is_inh.h](./include/payment_processor_c
 Child class 2: [payment_processor_debit_is_inh.h](./include/payment_processor_debit_is_inh.h) \
 Child class 3: [payment_processor_paypal_is_inh.h](./include/payment_processor_paypal_is_inh.h) 
 
-Example: [main_is_inh.cpp](./main_is_inh.cpp)
+Example: [main_is_inh.cpp](examples/main_is_inh.cpp)
 
 ### Integration Segregation Principle (Composition)
 
@@ -35,7 +35,7 @@ Child class 1: [payment_processor_credit_is_comp.h](./include/payment_processor_
 Child class 2: [payment_processor_debit_is_comp.h](./include/payment_processor_debit_is_comp.h) \
 Child class 3: [payment_processor_paypal_is_comp.h](./include/payment_processor_paypal_is_comp.h)
 
-Example: [main_is_comp.cpp](./main_is_comp.cpp)
+Example: [main_is_comp.cpp](examples/main_is_comp.cpp)
 
 ## Author
 Angelos Plastropoulos (aka Blender) via [CodingAdventures.org](http://codingadventures.org/)

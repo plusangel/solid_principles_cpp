@@ -21,5 +21,11 @@ int main() {
     spdlog::error(t.what());
   }
 
+  try {
+    an_order.Pay("credit", "96553");
+  } catch (const Trouble& t) {
+    spdlog::error(t.what());
+  }
+
   return 0;
 }

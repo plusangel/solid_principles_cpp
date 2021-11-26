@@ -4,7 +4,10 @@
 TBD
 
 ## Motivation
-TBD
+SOLID principles is one of the most popular set of principles which every coder should know. What is the best way
+to understand it? To write an example. Okay. But the example should be representative of the situation. To accommodate this requirement,
+Arjan Egges from [Arjan Codes](https://www.youtube.com/channel/UCVhQ2NnY5Rskt6UjCUkJ_DA) created the scenario. Then the final bit is that, you understand better when you try to explain to other 
+people. That is the purpose of my [technical blog](http://codingadventures.org/) and this is part of it. Enjoy!
 
 ## Non-optimised example
 

@@ -1,5 +1,8 @@
 ## Changelog for SOLID principles examples
 
+### 0.0.15 26/11/2021
+Readme updated
+
 ### 0.0.14 26/11/2021
 Added D of SOLID principles (Dependency Inversion) using Composition
 

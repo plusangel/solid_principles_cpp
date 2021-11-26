@@ -1,5 +1,8 @@
 ## Changelog for SOLID principles examples
 
+### 0.0.17 26/11/2021
+Readme updated
+
 ### 0.0.16 26/11/2021
 Online CI setup
 

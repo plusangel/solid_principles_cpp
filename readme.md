@@ -3,7 +3,17 @@
 # SOLID principles in modern C++
 
 ## Description
-TBD
+We will try to explain SOLID principles with an example. We will start with a non optimised scenario of a sales system, and
+we will build gradually on to of that for each individual principle. The sales system consists of the **Order** class. In this class
+we can handle objects of the **Item** class. In general, we can add items in the order, print an order and finally pay it. Let's
+see who the SOLID principles, which are
+- Single Responsibility,
+- Open closed,
+- Liskov,
+- Integration Segregation and
+- Dependency Inversion
+
+can help us to optimise the sales system, step by step.
 
 ## Motivation
 SOLID principles is one of the most popular set of principles which every coder should know. What is the best way

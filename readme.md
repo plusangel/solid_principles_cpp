@@ -28,7 +28,7 @@ Example of use: [main_single_responsibility.cpp](examples/main_single_responsibi
 Item class: [item.h](./include/item.h) \
 New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp) 
 
-Parent class: [payment_processor_abstract_op.h](./include/payment_processor_abstract_oc.h)
+Payment processor abstract class: [payment_processor_abstract_op.h](./include/payment_processor_abstract_oc.h)
 
 Child class 1: [payment_processor_credit_oc.h](./include/payment_processor_credit_oc.h) \
 Child class 2: [payment_processor_debit_oc.h](./include/payment_processor_debit_oc.h) \
@@ -54,8 +54,8 @@ Example: [main_liskov.cpp](examples/main_liskov.cpp)
 Item class: [item.h](./include/item.h) \
 New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp) 
 
-Parent class 1: [payment_processor_abstract_is.h](./include/payment_processor_abstract_is.h) \
-Parent class 2: [payment_processor_abstract_sms_is.h](./include/payment_processor_abstract_sms_is_inh.h)
+Payment processor abstract class 1: [payment_processor_abstract_is.h](./include/payment_processor_abstract_is.h) \
+Payment processor abstract class 2: [payment_processor_abstract_sms_is.h](./include/payment_processor_abstract_sms_is_inh.h)
 
 Child class 1: [payment_processor_credit_is_inh.h](./include/payment_processor_credit_is_inh.h) \
 Child class 2: [payment_processor_debit_is_inh.h](./include/payment_processor_debit_is_inh.h) \
@@ -68,14 +68,31 @@ Example: [main_is_inh.cpp](examples/main_is_inh.cpp)
 Item class: [item.h](./include/item.h) \
 New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp) 
 
-Parent class: [payment_processor_abstract_is.h](./include/payment_processor_abstract_is.h) \
-SMS_authorizer class: [sms_authorizer.h](./include/sms_authorizer.h)
+Payment processor abstract  class: [payment_processor_abstract_is.h](./include/payment_processor_abstract_is.h) \
+SMS Authorizer class: [sms_authorizer.h](./include/sms_authorizer.h)
 
 Child class 1: [payment_processor_credit_is_comp.h](./include/payment_processor_credit_is_comp.h) \
 Child class 2: [payment_processor_debit_is_comp.h](./include/payment_processor_debit_is_comp.h) \
 Child class 3: [payment_processor_paypal_is_comp.h](./include/payment_processor_paypal_is_comp.h)
 
 Example: [main_is_comp.cpp](examples/main_is_comp.cpp)
+
+### Dependency Inversion Principle (Composition)
+
+Item class: [item.h](./include/item.h) \
+New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp)
+
+Payment processor abstract class: [payment_processor_abstract_is.h](./include/payment_processor_abstract_is.h)
+
+Authorizer abstract class: [authorizer_abstract.h](./include/authorizer_abstract.h) \
+SMS Authorizer class: [sms_authorizer.h](./include/sms_authorizer_di.h) \
+Not a robot authorizer: [not_a_robot_authorizer.h](./include/not_a_robot_authorizer_di.h)
+
+Child class 1: [payment_processor_credit_di_comp.h](./include/payment_processor_credit_di_comp.h) \
+Child class 2: [payment_processor_debit_di_comp.h](./include/payment_processor_debit_di_comp.h) \
+Child class 3: [payment_processor_paypal_di_comp.h](./include/payment_processor_paypal_di_comp.h)
+
+Example: [main_di_comp.cpp](examples/main_di_comp.cpp)
 
 ## Author
 Angelos Plastropoulos (aka Blender) via [CodingAdventures.org](http://codingadventures.org/)

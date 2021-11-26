@@ -35,3 +35,6 @@ target_link_libraries(main_is_inh new_order ${CONAN_LIBS})
 
 add_executable(main_is_comp examples/main_is_comp.cpp)
 target_link_libraries(main_is_comp new_order ${CONAN_LIBS})
+
+add_executable(main_di_comp examples/main_di_comp.cpp)
+target_link_libraries(main_di_comp new_order ${CONAN_LIBS})

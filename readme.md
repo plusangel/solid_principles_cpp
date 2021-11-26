@@ -1,3 +1,5 @@
+[![CMake](https://github.com/plusangel/solid_principles_cpp/actions/workflows/cmake.yml/badge.svg)](https://github.com/plusangel/solid_principles_cpp/actions/workflows/cmake.yml)
+
 # SOLID principles in modern C++
 
 ## Description

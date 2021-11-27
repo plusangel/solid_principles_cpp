@@ -8,9 +8,9 @@ we will build gradually on to of that for each individual principle. The sales s
 we can handle objects of the **Item** class. In general, we can add items in the order, print an order and finally pay it. Let's
 see who the SOLID principles, which are
 - Single Responsibility,
-- Open closed,
-- Liskov,
-- Integration Segregation and
+- Open-closed,
+- Liskov Substitution,
+- Interface Segregation and
 - Dependency Inversion
 
 can help us to optimise the sales system, step by step.
@@ -38,7 +38,7 @@ Payment processor: [payment_processor.h](./include/payment_processor.h) & [payme
 
 Example of use: [main_single_responsibility.cpp](examples/main_single_responsibility.cpp)
 
-### Open closed principle
+### Open-closed principle
 
 Item class: [item.h](./include/item.h) \
 New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp) 
@@ -51,7 +51,7 @@ Child class 3: [payment_processor_paypal_oc.h](./include/payment_processor_paypa
 
 Example: [main_open_closed.cpp](examples/main_open_closed.cpp)
 
-### Liskov principle
+### Liskov substitution principle
 
 Item class: [item.h](./include/item.h) \
 New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp)
@@ -64,7 +64,7 @@ Child class 3: [payment_processor_paypal_liskov.h](./include/payment_processor_p
 
 Example: [main_liskov.cpp](examples/main_liskov.cpp)
 
-### Integration Segregation Principle (Inheritance)
+### Interface segregation principle (Inheritance)
 
 Item class: [item.h](./include/item.h) \
 New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp) 
@@ -78,7 +78,7 @@ Child class 3: [payment_processor_paypal_is_inh.h](./include/payment_processor_p
 
 Example: [main_is_inh.cpp](examples/main_is_inh.cpp)
 
-### Integration Segregation Principle (Composition)
+### Interface segregation principle (Composition)
 
 Item class: [item.h](./include/item.h) \
 New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp) 
@@ -92,7 +92,7 @@ Child class 3: [payment_processor_paypal_is_comp.h](./include/payment_processor_
 
 Example: [main_is_comp.cpp](examples/main_is_comp.cpp)
 
-### Dependency Inversion Principle (Composition)
+### Dependency inversion principle (Composition)
 
 Item class: [item.h](./include/item.h) \
 New order class: [new_order.h](./include/new_order.h) & [new_order.cpp](./src/new_order.cpp)

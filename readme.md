@@ -15,6 +15,9 @@ see who the SOLID principles, which are
 
 can help us to optimise the sales system, step by step.
 
+## Tutorial
+Please find a detailed explanation of the concept in [coding adventures](http://codingadventures.org/2021/11/27/solid-principles-using-modern-c/) blog post.
+
 ## Motivation
 SOLID principles is one of the most popular set of principles which every coder should know. What is the best way
 to understand it? To write an example. Okay. But the example should be representative of the situation. To accommodate this requirement,

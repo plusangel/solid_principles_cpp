@@ -1,5 +1,8 @@
 ## Changelog for SOLID principles examples
 
+### 0.0.20 11/112/2021
+Readme updated
+
 ### 0.0.19 28/11/2021
 Readme updated
 

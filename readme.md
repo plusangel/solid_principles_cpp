@@ -113,7 +113,7 @@ Child class 3: [payment_processor_paypal_di_comp.h](./include/payment_processor_
 Example: [main_di_comp.cpp](examples/main_di_comp.cpp)
 
 ## Author
-Angelos Plastropoulos (aka Blender) via [CodingAdventures.org](http://codingadventures.org/)
+Angelos Plastropoulos (aka Bender) via [CodingAdventures.org](http://codingadventures.org/)
 
 
 ## Credits
